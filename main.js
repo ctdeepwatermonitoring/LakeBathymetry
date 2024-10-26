@@ -67,6 +67,7 @@ $.getJSON("historic_lake_bathymetry.geojson",function(data){
     onEachFeature: function (feature,marker) {
       var href = "pdfs/"+ feature.properties.lake_nm
       marker.bindPopup('<b>Lake: </b>'+ feature.properties.locationNa+'</br>' + 
+        '<b>Max Observed Depth (M): </b>'+ feature.properties.maxD+'</br>' +
         '<a href="'+href+'"target="_blank"'+'" </a> Link to PDF Map',customOptions);
     }
     }).addTo(map);
